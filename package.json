@@ -1,0 +1,47 @@
+{
+  "name": "Mean Boilerplate",
+  "version": "0.1.6",
+  "description": "A working example fo the power of the MEAN Stack leveraging the additional functionalities of Web Sockets and Token-based authentication.",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.3.8",
+    "angular-resource": "^1.3.8",
+    "angular-ui-router": "^0.2.13",
+    "body-parser": "^1.10.0",
+    "express": "^4.10.6",
+    "mongoose": "^3.8.21",
+    "socket.io": "^1.2.1",
+    "socket.io-client": "^1.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-concat": "^2.4.2",
+    "gulp-minify-html": "^0.1.8",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-notify": "^2.1.0",
+    "gulp-sass": "^1.2.4",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-uglify": "^1.0.2",
+    "mocha": "^2.1.0",
+    "protractor": "^1.6.1",
+    "supertest": "^0.15.0"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deeleman/mean-boilerplate.git"
+  },
+  "keywords": [
+    "angular",
+    "mongodb",
+    "express",
+    "node.js",
+    "websockets",
+    "jwt"
+  ],
+  "author": "Pablo Deeleman",
+  "license": "BSD"
+}

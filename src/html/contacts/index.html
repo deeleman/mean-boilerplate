@@ -1,0 +1,47 @@
+<div ng-cloak>
+    <h1 ui-sref="list">Crud Example</h1>
+    <h2>Records</h2>
+    <p>
+        <a ui-sref="list.new">[+] New Entry</a>
+    </p>
+    <input type="search" ng-model="query" placeholder="filter entries...">
+    <ul id="entriesList">
+        <li ng-repeat="entry in examples | filter: query as results">
+        <a ui-sref="list.edit({parameterName: entry.field3})">{{entry.field1}} - {{entry.field2}}</a>
+        </li>
+        <li ng-if="entries.length === 0 || results.length === 0">
+            <strong>No results found...</strong>
+        </li>
+    </ul>
+    <h3>Detailed View</h3>
+    <div style="border: 1px solid grey;">
+        <h4 ng-if="!entry">No entry selected</h4>
+        <div ng-if="entry">
+            <img ng-src="{{entry.avatar}}" ng-show="!isNew" alt="Avatar">
+            <fieldset>
+                <label>Field 1:</label>
+                <input type="text" name="firstName" id="firstName" ng-model="entry.firstName">
+            </fieldset>
+            <fieldset>
+                <label>Field 2:</label>
+                <input type="text" name="lastName" id="lastName" ng-model="entry.lastName">
+            </fieldset>
+            <fieldset>
+                <label>Field 3:</label>
+                <input type="text" name="email" id="email" ng-model="entry.email">
+            </fieldset>
+            <fieldset>
+                <label>Field 4:</label>
+                <input type="text" name="phone" id="phone" ng-model="entry.phone">
+            </fieldset>
+            <div ng-show="!isNew">
+                <input id="updateEntryButton" type="button" value="Save Changes" ng-click="updateExample()">
+                <p><a href="" ng-click="deleteExample(entry, $event)">[X] Remove entry</a>
+            </div>
+            <div ng-show="isNew">
+                <input  id="saveEntryButton" type="button" value="Create Entry" ng-click="createExample()">
+            </div>
+            </p>
+        </div>
+    </div>
+</div>

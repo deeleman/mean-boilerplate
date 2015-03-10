@@ -1,0 +1,47 @@
+<div ng-cloak>
+    <h1 ui-sref="list">My Phonebook</h1>
+    <h2>My Contacts</h2>
+    <p>
+        <a id="newContact" ui-sref="list.new">[+] New Contact</a>
+    </p>
+    <input type="search" ng-model="query" placeholder="filter friends...">
+    <ul id="contactsList">
+        <li ng-repeat="contact in contacts | filter: query as results">
+        <a ui-sref="list.edit({email: contact.email})">{{contact.firstName}} - {{contact.email}}</a>
+        </li>
+        <li ng-if="contacts.length === 0 || results.length === 0">
+            <strong>No results found...</strong>
+        </li>
+    </ul>
+    <h3>Detailed View</h3>
+    <div style="border: 1px solid grey;">
+        <h4 ng-if="!contact">No contact selected</h4>
+        <div id="contactForm" ng-if="contact">
+            <img ng-src="{{contact.avatar}}" ng-show="!isNew" alt="Avatar">
+            <fieldset>
+                <label>First Name:</label>
+                <input type="text" name="firstName" id="firstName" ng-model="contact.firstName">
+            </fieldset>
+            <fieldset>
+                <label>Last Name:</label>
+                <input type="text" name="lastName" id="lastName" ng-model="contact.lastName">
+            </fieldset>
+            <fieldset>
+                <label>Email:</label>
+                <input type="text" name="email" id="email" ng-model="contact.email">
+            </fieldset>
+            <fieldset>
+                <label>Phone:</label>
+                <input type="text" name="phone" id="phone" ng-model="contact.phone">
+            </fieldset>
+            <div ng-show="!isNew">
+                <input id="updateContactButton" type="button" value="Save Changes" ng-click="updateContact()">
+                <p><a href="" ng-click="deleteContact(contact, $event)">[X] Remove contact</a>
+            </div>
+            <div ng-show="isNew">
+                <input  id="saveContactButton" type="button" value="Create Contact" ng-click="createContact()">
+            </div>
+            </p>
+        </div>
+    </div>
+</div>
