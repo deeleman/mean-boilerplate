@@ -17,13 +17,13 @@ A Makefile has been provided for your convenience. This same Makefile contain ac
 
 Gulp is provided to help out with the building and development automation.
 
-The previous Makefile just starts Gulp when running for initializasing something.
+The following Makefile just isntalls all dependencies and starts Gulp when running for initializasing something.
 
 ```$ make init```
 
 Of course Gulp can be (and will) launched separately.
 
-```$ gulp init```
+```$ gulp dev```
 
 ----------
 # License - "BSD License" #
